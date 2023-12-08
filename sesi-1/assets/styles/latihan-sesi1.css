@@ -1,0 +1,96 @@
+:root {
+    --table-width: 1000px;
+    --table-cell-height: 40px;
+    
+    --background-lightblue: lightskyblue;
+    --background-orange: orange;
+    --background-lightgreen: lightgreen;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+.table-container{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+
+    overflow-x: auto;
+}
+
+table {
+    width: var(--table-width);
+    border-spacing: 0;
+}
+
+:where(th, td) {
+    height: var(--table-cell-height);
+    padding: .5px;
+}
+
+thead tr:nth-child(1) th:nth-child(1) {
+    width: 4%;
+}
+
+thead tr:nth-child(1) th:nth-child(2) {
+    width: 11%;
+}
+
+thead tr:nth-child(1) th:nth-child(5) {
+    width: 9%;
+}
+
+thead tr:nth-child(1) th:nth-child(6) {
+    width: 6.5%;
+}
+
+thead tr:nth-child(2) th:nth-child(-n+3) {
+    text-align: left;
+    width: 12%;
+}
+
+thead tr:nth-child(2) th:nth-child(4) {
+    width: 9%;
+}
+
+thead tr:nth-child(2) th:nth-child(n+5):nth-child(-n+7) {
+    width: 6%;
+}
+
+tbody tr:nth-child(-n+3) td:nth-child(-n+2),
+tbody tr:nth-child(-n+3) td:nth-child(n+10):nth-child(-n+11) {
+    vertical-align: bottom;
+    text-align: center;
+}
+
+tbody tr:nth-child(-n+3) td:nth-child(n+3):nth-child(-n+5) {
+    vertical-align: bottom;
+}
+
+tbody tr:nth-child(-n+3) td:nth-child(n+6):nth-child(-n+9) {
+    text-align: center;
+}
+
+thead,
+tfoot tr:nth-child(-n+5) td:first-child {
+    background-color: var(--background-lightblue);
+}
+
+tfoot tr:nth-child(-n+5) td:first-child {
+    text-align: right;
+}
+
+tfoot tr:nth-child(-n+5) td:last-child {
+    text-align: center;
+    background-color: var(--background-orange);
+}
+
+tfoot tr:last-child {
+    height: 45px;
+    background-color: var(--background-lightgreen);
+    text-align: center;
+}
