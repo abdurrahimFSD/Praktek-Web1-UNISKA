@@ -27,6 +27,10 @@ table {
     border-spacing: 0;
 }
 
+:where(table, th, td) {
+    border: 1px solid black;
+}
+
 :where(th, td) {
     height: var(--table-cell-height);
     padding: .5px;
