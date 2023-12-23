@@ -1,0 +1,49 @@
+* {
+    color: blue;
+    border: 2px solid red;
+}
+
+h1 {
+    color: green;
+}
+
+.text-merah,
+#text-kuning {
+    font-size: 20px;
+    text-align: center;
+    background-color: black;
+}
+
+.text-merah {
+    color: red;
+}
+
+#text-kuning {
+    color: yellow;
+}
+
+/*  Descendant Selector */
+div p {
+    color: red;
+}
+
+/* Child Selector  */
+div > div > p {
+    font-weight: bold;
+}
+
+.subbagian {
+    font-size: 30px;
+}
+
+/*  Chaining Selector */
+.subbagian.header {
+    color: blueviolet;
+}
+.subbagian#text {
+    color: brown;
+}      
+
+p:hover {
+    background-color: aqua;
+}

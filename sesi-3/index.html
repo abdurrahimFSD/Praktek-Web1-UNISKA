@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form dan Input</title>
+</head>
+<body>
+    <form>
+        <label for="nik">NIK :</label> <br>
+        <input type="number" name="nik" id="nik" size="10" maxlength="10"  placeholder="misal:123" required> <br>
+
+        <label for="nama">Nama :</label> <br>
+        <input type="text" name="nama" id="nama" required placeholder="misal: Fulan"> <br>
+
+        <label for="tanggal-mulai">Tanggal Mulai :</label> <br>
+        <input type="date" name="tanggal-mulai" id="tanggal-mulai" required min="2022-01-11"> <br>
+
+        <label for="gaji-pokok">Gaji Pokok :</label> <br>
+        <input type="number" name="gaji-pokok" id="gaji-pokok" required min="1000000" step="1000"> <br>
+
+        <label for="">Status Karyawan :</label> <br>
+
+        <input type="radio" name="status-karyawan" id="tetap" value="TETAP">
+        <label for="tetap">TETAP</label> <br>
+
+        <input type="radio" name="status-karyawan" id="kontrak" value="KONTRAK">
+        <label for="kontrak">KONTRAK</label> <br>
+
+        <input type="radio" name="status-karyawan" id="magang" value="MAGANG">
+        <label for="magang">MAGANG</label> <br>
+        
+        <label for="goldar">Golongan Darah</label> <br>
+        <select name="goldar" id="goldar" required>
+            <option value="">Pilih Golongan Darah Anda</option>
+            <option value="A">A</option>
+            <option value="AB">AB</option>
+            <option value="B">B</option>
+            <option value="O">O</option>
+        </select>
+        <br>
+        
+        <input type="submit" id="btn-submit" name="btn-submit" value="Submit">
+        <input type="reset" id="btn-reset" name="btn-reset" value="Reset">
+
+    </form>
+</body>
+</html>

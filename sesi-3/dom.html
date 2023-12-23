@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Dom</title>
+</head>
+<body id="latar">
+    <h1 id="uji-heading" onmouseover="sorot(this)" onmouseout="keluarSorot(this)"></h1>
+    <p id="uji-paragraf"></p>
+    <input type="text" id="uji-input" onkeyup="kageBunshin(this)">
+    <p id="hasilKageBunshin"></p>
+
+    <form action="">
+        <input type="number" name="number1" id="number1"> <br>
+        <input type="number" name="number2" id="number2"> <br>
+        <button type="button" onclick="hitungJumlah('+')"> + </button>
+        <button type="button" onclick="hitungJumlah('-')"> - </button> 
+        <button type="button" onclick="hitungJumlah('*')"> * </button> 
+        <button type="button" onclick="hitungJumlah('/')"> / </button> 
+        <button type="reset">Clear</button> <br>
+        <input type="number" name="hasilOperasi" id="hasilOperasi" readonly > <br>
+    </form>
+
+    <script>
+        let sorot = (obj) => {
+            obj.innerHTML = "Sudah Di Sorot";
+            obj.style.color = 'Blue';
+            document.getElementById('latar').style.backgroundColor = 'lightgreen';
+        };
+
+        let keluarSorot = (abc) => {
+            abc.innerHTML = "Sorot Lagi Dong"; 
+            abc.style.color = 'Black';
+            document.getElementById('latar').style.backgroundColor = 'lightskyblue';
+        };
+
+        let kageBunshin = (o) => {
+            let text = o.value;
+            document.getElementById('hasilKageBunshin').innerHTML = text;
+        };
+
+        // Kalkulator
+        let hitungJumlah = (operator) => {
+            let number1 = parseFloat(document.getElementById('number1').value);
+            let number2 = parseFloat(document.getElementById('number2').value);
+            let hasil = 0;
+
+            switch (operator) {
+                case '+':
+                    hasil = number1 + number2;
+                    break;
+                case '-':
+                    hasil = number1 - number2;
+                    break;
+                case '*':
+                    hasil = number1 * number2;
+                    break;
+                case '/':
+                    hasil = number1 / number2;
+                    break;
+            }
+
+            document.getElementById('hasilOperasi').value = hasil;
+        };
+
+        let ujiHeading = document.getElementById('uji-heading');
+        ujiHeading.innerHTML = "Judul";
+
+        let ujiParagraf = document.getElementById('uji-paragraf');
+        ujiParagraf.innerHTML = "Paragraf";
+
+        let ujiInput = document.getElementById('uji-input');
+        ujiInput.value = "User";
+
+        let nama = document.getElementById('uji-input').value;
+        alert(`Selamat Datang ${nama}`);
+    </script>
+</body>
+</html>
